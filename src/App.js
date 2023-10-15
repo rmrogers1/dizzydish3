@@ -2,11 +2,6 @@ import React from 'react';
 import './App.css';
 
 const foodArray = ['Pizza','Sushi','Burgers','Thai','Tacos','Pancakes','Tequila','Worth Wild'];
-//const listItems = foodArray.map((food) =>
-//  <li>{food}</li>
-//);
-//const randomFood = foodArray.length;
-//const theFood = Math.random(5);
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -22,6 +17,7 @@ const ImageDisplay = () => {
       <header className="App-header">
       <center><h1>Dizzy Dish</h1></center>
       <br></br>
+      <br></br>
         <img style={myImageStyle} className="App-logo" src={imageUrl} alt="Image" />
         <h2 className="App-food" >{foodArray[getRandomInt(8)]}</h2>
       </header>
@@ -31,9 +27,4 @@ const ImageDisplay = () => {
   )  
 }
 
-
-
-
-
-//export default withAuthenticator(App);
 export default ImageDisplay;

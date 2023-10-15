@@ -7,9 +7,18 @@
   pointer-events: none;
 }
 
+.App-button{
+  color: black;
+  font-size: 16px;
+  padding: 16px 30px;
+  background-color: #554b4b;
+  border: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 10s linear;
+    border-radius: 50%;
   }
 }
 

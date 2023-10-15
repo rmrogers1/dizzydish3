@@ -16,9 +16,8 @@ const ImageDisplay = () => {
     <div className="App">
       <header className="App-header">
       <center><h1>Dizzy Dish</h1></center>
-      <br></br>
-      <br></br>
         <img style={myImageStyle} className="App-logo" src={imageUrl} alt="Image" />
+        <button type="button" className="App-button">What Should We Eat?</button>
         <h2 className="App-food" >{foodArray[getRandomInt(8)]}</h2>
       </header>
       

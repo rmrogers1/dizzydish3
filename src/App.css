@@ -7,13 +7,17 @@
   pointer-events: none;
 }
 
-/*.App-button{
-  color: black;
-  font-size: 16px;
-  padding: 16px 30px;
-  background-color: #554b4b;
+.App-button{
+  background-color: #4CAF50; /* Green */
   border: none;
-}*/
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -35,6 +39,11 @@
 }
 
 .App-food {
+  color: #00080a;
+  animation: zoom-in-zoom-out 1s ease infinite;
+}
+
+.App-food2 {
   color: #00080a;
   animation: zoom-in-zoom-out 1s ease infinite;
 }

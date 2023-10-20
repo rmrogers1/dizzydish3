@@ -14,7 +14,7 @@ function Display() {
 
 }
 
-
+//<label className="App-food" >{foodArray[getRandomInt(8)]}</label>
 
 const ImageDisplay = () => {
   const imageUrl = 'https://imagesreact.s3.amazonaws.com/IMG_8655+(1).jpg';
@@ -27,7 +27,7 @@ const ImageDisplay = () => {
         <img style={myImageStyle} className="App-logo" src={imageUrl} alt="Image" />
         <button type="button" variant="outlined" onClick={Display} className="App-button">What Should We Eat?</button>
         <br></br>
-        <label className="App-food" >{foodArray[getRandomInt(8)]}</label>
+        
 
       </header>
       

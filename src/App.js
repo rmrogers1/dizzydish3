@@ -1,11 +1,18 @@
 import React from 'react';
 import './App.css';
+import { useState } from 'react';
 
 const foodArray = ['Pizza','Sushi','Burgers','Thai','Tacos','Pancakes','Tequila','Worth Wild'];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
+function activateWheel(){
+
+}
+
+
 
 
 const ImageDisplay = () => {
@@ -17,8 +24,9 @@ const ImageDisplay = () => {
       <header className="App-header">
       <center><h1>Dizzy Dish</h1></center>
         <img style={myImageStyle} className="App-logo" src={imageUrl} alt="Image" />
-        <button type="button" className="App-button">What Should We Eat?</button>
+        <button type="button" variant="outlined" onClick={activateWheel} className="App-button">What Should We Eat?</button>
         <h2 className="App-food" >{foodArray[getRandomInt(8)]}</h2>
+
       </header>
       
       

@@ -8,10 +8,11 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function activateWheel(){
+function Display() {
+  
+  alert(foodArray[getRandomInt(8)]);
 
 }
-
 
 
 
@@ -24,8 +25,9 @@ const ImageDisplay = () => {
       <header className="App-header">
       <center><h1>Dizzy Dish</h1></center>
         <img style={myImageStyle} className="App-logo" src={imageUrl} alt="Image" />
-        <button type="button" variant="outlined" onClick={activateWheel} className="App-button">What Should We Eat?</button>
-        <h2 className="App-food" >{foodArray[getRandomInt(8)]}</h2>
+        <button type="button" variant="outlined" onClick={Display} className="App-button">What Should We Eat?</button>
+        <br></br>
+        <label className="App-food" >{foodArray[getRandomInt(8)]}</label>
 
       </header>
       

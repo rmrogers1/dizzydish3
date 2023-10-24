@@ -1,39 +1,49 @@
-import React from 'react';
-import './App.css';
-import { useState } from 'react';
+import React, { useState } from 'react'
+import dizzyDish from './assets/dizzyDish.png'
+import './App.scss'
 
-const foodArray = ['Pizza','Sushi','Burgers','Thai','Tacos','Pancakes','Tequila','Worth Wild'];
+// we should setup a simple api call, that would return a random number of items, but we always have this as a failsafe
+const foodArray = [
+  'Pizza',
+  'Sushi',
+  'Burgers',
+  'Thai',
+  'Tacos',
+  'Pancakes',
+  'Tequila',
+  'Worth Wild',
+]
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
+const App = () => {
+  const [label, setLabel] = useState('')
 
-function Display() {
-  
-  alert(foodArray[getRandomInt(8)]);
+  if (!foodArray) return null
 
-}
-
-
-
-const ImageDisplay = () => {
-  const imageUrl = 'https://imagesreact.s3.amazonaws.com/IMG_8655+(1).jpg';
-  const myImageStyle = { width: '300px', height: '300px' };
+  const letUsFeast = () => {
+    const randomInt = Math.floor(Math.random() * foodArray.length)
+    setLabel(foodArray[randomInt])
+  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-      <center><h1>Dizzy Dish</h1></center>
-        <img style={myImageStyle} className="App-logo" src={imageUrl} alt="Image" />
-        <button type="button" variant="outlined" onClick={Display} className="App-button">What Should We Eat?</button>
-        <br></br>
-       {/* <label className="App-food" >{foodArray[getRandomInt(8)]}</label> */}
-
+    <div className='App'>
+      <header className='App-header'>
+        <h1>Dizzy Dish</h1>
       </header>
-      
-      
+      {label && <div className='App-food-label'>{label}</div>}
+      <div className='App-content'>
+        <img className='App-spinner' src={dizzyDish} alt='spinner' />
+      </div>
+
+      <button
+        type='button'
+        variant='outlined'
+        onClick={() => letUsFeast()}
+        className='App-button'
+      >
+        What Should We Eat?
+      </button>
     </div>
-  )  
+  )
 }
 
-export default ImageDisplay;
+export default App

@@ -16,12 +16,20 @@ const foodArray = [
 
 const App = () => {
   const [label, setLabel] = useState('')
+  const [spinning, setSpinning] = useState(false)
 
   if (!foodArray) return null
 
   const letUsFeast = () => {
+    setLabel(null)
+    setSpinning(true)
     const randomInt = Math.floor(Math.random() * foodArray.length)
-    setLabel(foodArray[randomInt])
+
+    // Simulate a delay before stopping the spinning
+    setTimeout(() => {
+      setSpinning(false)
+      setLabel(foodArray[randomInt])
+    }, 3000) // Adjust the delay as needed
   }
 
   return (
@@ -29,16 +37,21 @@ const App = () => {
       <header className='App-header'>
         <h1>Dizzy Dish</h1>
       </header>
-      {label && <div className='App-food-label'>{label}</div>}
-      <div className='App-content'>
-        <img className='App-spinner' src={dizzyDish} alt='spinner' />
-      </div>
-
+      {/* whats for dinner */}
+      <div className='App-food-label'>{label}</div>
+      {/* spin the spinner */}
+      <img
+        className={`App-spinner ${spinning ? 'spin' : ''}`}
+        src={dizzyDish}
+        alt='spinner'
+      />
+      {/* clicky button */}
       <button
         type='button'
         variant='outlined'
         onClick={() => letUsFeast()}
         className='App-button'
+        disabled={spinning} // Disable the button while spinning
       >
         What Should We Eat?
       </button>

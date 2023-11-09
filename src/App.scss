@@ -20,12 +20,17 @@
   }
 }
 
-.App-content {
-  flex-grow: 1; /* This makes the image take up the remaining space */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.App-food-label {
+  height: 2em;
+  animation: zoom-in-zoom-out 1s ease infinite;
+  font-family: impact;
+  background: linear-gradient(45deg, #3498db, #ff69b4);
+  font-size: 3em;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
+
 .App-spinner {
   pointer-events: none;
   max-width: 80%;
@@ -36,8 +41,8 @@
     max-height: 50vh; /* Adjust the maximum height for larger screens */
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    animation: dizzy-dish-spinner infinite 10s linear;
+  &.spin {
+    animation: dizzy-dish-spinner 3s ease-out forwards; /* Adjust the duration and timing function */
   }
 }
 
@@ -51,17 +56,13 @@
   color: #ffffff;
   padding: 15px 32px;
   margin-bottom: 24px;
-}
+  margin-top: auto;
 
-.App-food-label {
-  font-size: 3em;
-  animation: zoom-in-zoom-out 1s ease infinite;
-  font-family: impact;
-  background: linear-gradient(45deg, #3498db, #ff69b4);
-  font-size: 3em;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  &:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    color: #888888;
+  }
 }
 
 @keyframes blinking-text {
@@ -95,10 +96,10 @@
 }
 
 @keyframes dizzy-dish-spinner {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: rotate(1800deg); /* Adjust the degrees for a single rotation */
   }
 }

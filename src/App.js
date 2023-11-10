@@ -1,34 +1,24 @@
 import React, { useState } from 'react'
 import dizzyDish from './assets/dizzyDish.png'
+import dishes from './assets/dishes'
 import './App.scss'
-
-// we should setup a simple api call, that would return a random number of items, but we always have this as a failsafe
-const foodArray = [
-  'Pizza',
-  'Sushi',
-  'Burgers',
-  'Thai',
-  'Tacos',
-  'Pancakes',
-  'Tequila',
-  'Worth Wild',
-]
 
 const App = () => {
   const [label, setLabel] = useState('')
   const [spinning, setSpinning] = useState(false)
 
-  if (!foodArray) return null
+  if (!dishes) return null
 
   const letUsFeast = () => {
     setLabel(null)
     setSpinning(true)
-    const randomInt = Math.floor(Math.random() * foodArray.length)
+
+    const randomInt = Math.floor(Math.random() * dishes.length)
 
     // Simulate a delay before stopping the spinning
     setTimeout(() => {
       setSpinning(false)
-      setLabel(foodArray[randomInt])
+      setLabel(dishes[randomInt])
     }, 3000) // Adjust the delay as needed
   }
 

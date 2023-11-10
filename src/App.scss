@@ -21,11 +21,12 @@
 }
 
 .App-food-label {
-  height: 2em;
+  height: 3em;
   animation: zoom-in-zoom-out 1s ease infinite;
   font-family: impact;
   background: linear-gradient(45deg, #3498db, #ff69b4);
-  font-size: 3em;
+  font-size: 2em;
+  text-align: center;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -88,7 +89,7 @@
     transform: scale(1, 1);
   }
   50% {
-    transform: scale(1.5, 1.5);
+    transform: scale(1.2, 1.2);
   }
   100% {
     transform: scale(1, 1);

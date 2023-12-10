@@ -57,5 +57,5 @@ const App = ({ signOut, user }) => {
     </div>
   )
 }
-//adds the authenticator from AWS Congnito
+//Adds the authenticator from AWS Congnito
 export default withAuthenticator(App);

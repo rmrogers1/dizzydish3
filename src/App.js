@@ -9,7 +9,7 @@ import '@aws-amplify/ui-react/styles.css';
 import config from './amplifyconfiguration.json';
 Amplify.configure(config);
 
-//Define the signout and user
+//Define the signout and user 
 const App = ({ signOut, user }) => {
   const [label, setLabel] = useState('')
   const [spinning, setSpinning] = useState(false)

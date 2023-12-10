@@ -2,8 +2,15 @@ import React, { useState } from 'react'
 import dizzyDish from './assets/dizzyDish.png'
 import dishes from './assets/dishes'
 import './App.scss'
+import { Amplify } from 'aws-amplify';
 
-const App = () => {
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import config from './amplifyconfiguration.json';
+Amplify.configure(config);
+
+//Define the signout and user
+const App = ({ signOut, user }) => {
   const [label, setLabel] = useState('')
   const [spinning, setSpinning] = useState(false)
 
@@ -25,6 +32,7 @@ const App = () => {
   return (
     <div className='App'>
       <header className='App-header'>
+      <h5>Hello {user.username}</h5>
         <h1>Dizzy Dish</h1>
       </header>
       {/* whats for dinner */}
@@ -45,8 +53,9 @@ const App = () => {
       >
         What Should We Eat?
       </button>
+      <button onClick={signOut}>Sign out</button>
     </div>
   )
 }
-
-export default App
+//adds the authenticator from AWS Congnito
+export default withAuthenticator(App);

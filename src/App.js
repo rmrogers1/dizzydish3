@@ -32,7 +32,6 @@ const App = ({ signOut, user }) => {
   return (
     <div className='App'>
       <header className='App-header'>
-      <h5>Hello {user.username}</h5>
         <h1>Dizzy Dish</h1>
       </header>
       {/* whats for dinner */}
